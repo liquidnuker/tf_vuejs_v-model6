@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- single -->
+      <select v-model="selected">
+        <option>Select Item</option>
+        <option>item1</option>
+        <option>item2</option>
+        <option>item3</option>
+      </select>
+      <span>Selected: {{ selected }}</span>
+    </div>
+    <br>
+    <br>
+    <div id="app2">
+      <!-- multiple -->
+      <select v-model="selected" multiple>
+        <option>item1</option>
+        <option>item2</option>
+        <option>item3</option>
+      </select>
+      <br>
+      <span>Selected: {{ selected }} {{ selected.length }}</span>
+      <p>{{ toStr }}</p>
+    </div>
+    <br>
+    <br>
+    <!-- dynamic -->
+    <div id="app3">
+      <select v-model="selected">
+        <option v-for="item in options" v-bind:value="item.value">
+          {{ item.text }} {{ item.value }}
+        </option>
+      </select>
+      <span>Selected: {{ selected }}</span>
+    </div>
+    
+    
+    <script src="src/js/vendor/vue.min.js"></script>
+    <script src="src/vue-trigger.js"></script>
+  </body>
+</html>
