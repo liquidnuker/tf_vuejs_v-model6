@@ -29,7 +29,7 @@
     </div>
     <br>
     <br>
-    <!-- dynamic -->
+    <!-- dynamic single-->
     <div id="app3">
       <select v-model="selected">
         <option v-for="item in options" v-bind:value="item.value">
@@ -37,6 +37,19 @@
         </option>
       </select>
       <span>Selected: {{ selected }}</span>
+    </div>
+    <br>
+    <br>
+    <!-- dynamic multiple -->
+    <div id="app4">
+      <select v-model="selected" multiple>
+        <option v-for="item in options" v-bind:value="item.value">
+          {{ item.text }} {{ item.value }}
+        </option>
+      </select>
+      <br>
+      <span>Selected: {{ selected }} {{ selected.length }}</span>
+      <p>{{ toStr }}</p>
     </div>
     
     

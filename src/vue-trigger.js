@@ -35,3 +35,16 @@ new Vue({
     options: app3_items
   }
 });
+
+new Vue({
+  el: "#app4",
+  data: {
+    selected: "A",
+    options: app3_items
+  },
+  computed: {
+    toStr: function () {
+      return this.selected.toString();
+    }
+  }
+});
